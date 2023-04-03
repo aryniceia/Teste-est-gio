@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Fibonacci</title>
+        </head>
+        
+        <body>
+            Mostrar o termo: <input id="numero" type="number"> <br />
+            <button onclick="fibonacci()">Exibir</button><br />
+            <div id='resposta'></div>
+        </body>
+
+        <script>
+            // 1 - Sequência Fibonacci: Seja a sequencia dada pela fórmula
+            // F(n + 2) = F(n + 1) + F(n) , com n ≥ 1 e F(1) = F(2) = 1 temos então:
+
+            function fibonacci(){
+                var input = parseInt(document.getElementById('numero').value);
+                var resposta = document.getElementById('resposta');
+                var penultimo=0
+                var ultimo=1;
+                var numero;
+            
+                if(input<=2)
+                    numero = input-1;
+                else
+                for(var count=3 ; count<=input ; count++){
+                    numero = ultimo + penultimo;
+                    penultimo = ultimo;
+                    ultimo = numero;
+                }
+                resposta.innerHTML=numero;
+
+                if (resposta = fibonacci()) {
+                    print('Este número está na sequencia')
+                }
+            }
+        </script>
+    </html>
